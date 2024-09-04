@@ -7,7 +7,7 @@
 
 ## Usage
 
-https://github.com/user-attachments/assets/5adc4008-fc4c-49ab-bed7-39fb4802d8ea
+https://github.com/user-attachments/assets/33a20fcb-fccd-4175-b037-7bcf82a59a22
 
 ## Key bindings inside fish
 - **ctrl + f** : **Find** all **files** in the current directory **recursively**.

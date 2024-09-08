@@ -1,5 +1,5 @@
 function finder_key_bindings -d "CLI tool for fuzzy searching local files."
-    set -g index_dir $HOME/.cache/indexed-dirs
+    set -g index_dir $HOME/.cache/finder
     set -g fzf_default_opts --bind ctrl-z:ignore,ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all --height 100% --preview-window down
     set -g fzf_preview_cmd_dir 'tree -l -L 3 -C {} | head -50'
     set -g fzf_preview_cmd_file 'batcat --theme ansi --color=always --style=numbers --line-range=:50 {}'
@@ -37,7 +37,7 @@ function finder_key_bindings -d "CLI tool for fuzzy searching local files."
         commandline -f repaint
     end
 
-    function __fzf_exec_cmd_on_selected_files -a cmd -a file_type -a mode
+    function __fzf_exec_cmd_on_selected_files -a cmd file_type mode
         set -l dir_and_query (__fzf_parse_commandline)
         set -l fd_dir (test "$mode" = "home" && set -e mode && echo $HOME || echo $dir_and_query[1])
         set -l fzf_query $dir_and_query[2]
